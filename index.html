@@ -703,7 +703,6 @@
             }
         });
         boardContainer.addEventListener('touchend', e => {
-            e.preventDefault();
             if (e.changedTouches.length === 1) {
                 let dx = e.changedTouches[0].clientX - touchStartX;
                 let dy = e.changedTouches[0].clientY - touchStartY;
@@ -714,6 +713,9 @@
                 }
             }
         });
+        boardContainer.addEventListener('touchmove', function (e) {
+            if (e.cancelable) e.preventDefault();
+        }, { passive: false });
         restartBtn.onclick = restartGame;
         undoBtn.onclick = undoGame;
         themeBtn.onclick = () => {
