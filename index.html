@@ -430,6 +430,7 @@
             html {
                 font-size: 12px;
             }
+
             .board {
                 grid-template-columns: repeat(4, 6.5rem);
                 grid-template-rows: repeat(4, 6.5rem);
@@ -702,6 +703,7 @@
             }
         });
         boardContainer.addEventListener('touchend', e => {
+            e.preventDefault();
             if (e.changedTouches.length === 1) {
                 let dx = e.changedTouches[0].clientX - touchStartX;
                 let dy = e.changedTouches[0].clientY - touchStartY;
