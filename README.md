@@ -2,6 +2,8 @@
 
 A visually stunning, animated, and feature-rich version of the classic 2048 game, crafted by **Atacan Çelikkol**.
 
+[**Play the Game**](https://atacan-celikkol.github.io/2048)
+
 ## Features
 
 - **Legendary UI:** Neon gradients, glowing tiles, and smooth, modern design.
