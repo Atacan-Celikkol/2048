@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>2048 Legendary Edition</title>
+    <title>2048 By Atacan Çelikkol</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <style>
@@ -75,11 +75,6 @@
             --game-title: linear-gradient(90deg, #ff7043 0%, #ffd600 100%);
         }
 
-        .light-mode .legendary {
-            color: #ff7043;
-            text-shadow: 0 2px 8px #ffd60088;
-        }
-
         .light-mode .footer {
             color: #ff7043;
         }
@@ -110,31 +105,12 @@
 
         h1 {
             font-size: 3rem;
-            margin: 2rem 0 0.5rem 0;
-            letter-spacing: 0.1em;
+            margin: 2rem 0 2rem 0;
+            letter-spacing: 0.2em;
             background: var(--game-title);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 2px 16px #0008;
-        }
-
-        .legendary {
-            font-size: 1.2rem;
-            letter-spacing: 0.2em;
-            color: #ffd600;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 2px 8px #00e67688;
-            animation: legendary-glow 2s infinite alternate;
-        }
-
-        @keyframes legendary-glow {
-            0% {
-                text-shadow: 0 2px 8px #00e67688, 0 0 0 #ffd600;
-            }
-
-            100% {
-                text-shadow: 0 2px 24px #ffd600, 0 0 16px #00e676;
-            }
         }
 
         .scoreboard {
@@ -452,7 +428,6 @@
 
 <body>
     <h1>2048</h1>
-    <div class="legendary">Legendary Edition ✨</div>
     <div class="scoreboard">
         <div class="score" id="score">0</div>
         <div class="best" id="best">0</div>
@@ -476,8 +451,7 @@
         </div>
     </div>
     <div class="footer">
-        Created by <a href="https://github.com/Atacan-Celikkol" target="_blank" rel="noopener">Atacan Çelikkol</a> with
-        love.
+        Created by <a href="https://github.com/Atacan-Celikkol" target="_blank" rel="noopener">Atacan Çelikkol</a>
     </div>
     <script>
         const SIZE = 4;
@@ -614,7 +588,7 @@
             if (score > best) {
                 best = score;
                 bestEl.textContent = best;
-                localStorage.setItem('legendary2048-best', best);
+                localStorage.setItem('2048-best', best);
                 bestEl.classList.add('animated');
                 setTimeout(() => bestEl.classList.remove('animated'), 400);
             }
@@ -729,7 +703,7 @@
             }
         };
         function loadBest() {
-            let b = localStorage.getItem('legendary2048-best');
+            let b = localStorage.getItem('2048-best');
             if (b) best = parseInt(b);
             bestEl.textContent = best;
         }

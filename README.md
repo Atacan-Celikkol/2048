@@ -1,19 +1,10 @@
 # 2048
 
-A visually stunning, animated, and feature-rich version of the classic 2048 game, crafted by **Atacan Çelikkol**.
+A visually stunning, animated, lightweight version of the classic 2048 game, crafted by **Atacan Çelikkol**.
 
-[**Play the Game**](https://atacan-celikkol.github.io/2048)
+**No Ads & No Telemetry:** Enjoy uninterrupted gameplay on all devices.
 
-## Features
-
-- **Legendary UI:** Neon gradients, glowing tiles, and smooth, modern design.
-- **Beautiful Animations:** Tile pops, merges, and legendary tile glows.
-- **Undo:** Revert your last move (limited to 1 step).
-- **Multiple Themes:** Switch between dark, neon, and light themes.
-- **Responsive:** Play on desktop or mobile (arrow keys or swipe).
-- **Best Score Tracking:** Your best score is saved in your browser.
-- **Win & Legendary Tiles:** Celebrate your 2048 win, and keep going for legendary 4096+ tiles!
-- **No Ads & No Telemetry:** Enjoy uninterrupted gameplay.
+[**Click Here to Play the Game 🎮**](https://atacan-celikkol.github.io/2048)
 
 ## How to Play
 
@@ -28,7 +19,7 @@ A visually stunning, animated, and feature-rich version of the classic 2048 game
 
 ![2048 Legendary Edition Screenshot](screenshot.png)
 
-## Run Locally
+## If You Want to Run Locally
 
 1. Download or clone this repository.
 2. Open `index.html` in your browser.
