@@ -268,8 +268,7 @@ h1 {
     transition: background 0.2s, color 0.2s, transform 0.15s;
     outline: none;
 }
-.btn:hover,
-.btn:focus {
+.btn:hover {
     background: var(--btn-hover);
     color: #23283a;
     transform: scale(1.08);
@@ -315,13 +314,6 @@ h1 {
 #game-won .btn {
     font-size: 1.2rem;
     margin-top: 1rem;
-}
-#undo-hint {
-    color: #81d4fa;
-    font-size: 1rem;
-    margin: 0.5rem 0;
-    text-align: center;
-    opacity: 0.7;
 }
 #footer {
     margin: 2rem 0 1rem 0;
