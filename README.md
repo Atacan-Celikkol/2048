@@ -4,7 +4,11 @@ A visually stunning, animated, lightweight version of the classic 2048 game, cra
 
 **No Ads & No Telemetry:** Enjoy uninterrupted gameplay on all devices.
 
+
+## PLAY
 [**Click Here to Play the Game 🎮**](https://atacan-celikkol.github.io/2048)
+
+[![QR Code](qr.svg)](https://atacan-celikkol.github.io/2048)
 
 ## How to Play
 
