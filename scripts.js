@@ -1,4 +1,6 @@
 
+
+const themes = ['', 'purple-neon', 'light-mode'];
 const SIZE = 4;
 let board = [];
 let score = 0;
@@ -133,7 +135,7 @@ function render() {
     if (score > best) {
         best = score;
         bestEl.textContent = best;
-        localStorage.setItem('2048-best', best);
+        localStorage.setItem('best', best);
         bestEl.classList.add('animated');
         setTimeout(() => bestEl.classList.remove('animated'), 400);
     }
@@ -173,6 +175,7 @@ function restartGame() {
     undoStack = [];
     setNewMergedTiles(null, emptyBoard(), board);
     render();
+    localStorage.removeItem('gameState');
 }
 function continueGame() {
     won = false;
@@ -206,6 +209,7 @@ function handleMove(dir) {
         over = true;
     }
     render();
+    saveGameState();
 }
 document.addEventListener('keydown', e => {
     if (e.ctrlKey || e.metaKey) return;
@@ -237,23 +241,66 @@ boardContainer.addEventListener('touchmove', function (e) {
 }, { passive: false });
 restartBtn.onclick = restartGame;
 undoBtn.onclick = undoGame;
-themeBtn.onclick = () => {
-    theme = (theme + 1) % 3;
-    if (theme === 0) {
-        body.classList.value = '';
-    } else if (theme === 1) {
-        body.classList.value = 'purple-neon';
-    } else {
-        body.classList.value = 'light-mode';
-    }
+
+const applyTheme = (t) => {
+    body.classList.value = themes[t];
+    localStorage.setItem('theme', t);
 };
+
+themeBtn.onclick = () => {
+    theme = (theme + 1) % themes.length;
+    applyTheme(theme);
+};
+
+function loadTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved !== null) {
+        theme = parseInt(saved);
+        applyTheme(theme);
+    }
+}
+
 function loadBest() {
-    let b = localStorage.getItem('2048-best');
+    let b = localStorage.getItem('best');
     if (b) best = parseInt(b);
     bestEl.textContent = best;
 }
+
+function saveGameState() {
+    const state = {
+        board: board,
+        score: score,
+        won: won,
+        over: over,
+        undoStack: undoStack
+    };
+    localStorage.setItem('gameState', JSON.stringify(state));
+}
+
+function loadGameState() {
+    const saved = localStorage.getItem('gameState');
+    if (!saved) return false;
+    try {
+        const state = JSON.parse(saved);
+        board = state.board || emptyBoard();
+        score = state.score || 0;
+        won = state.won || false;
+        over = state.over || false;
+        undoStack = state.undoStack || [];
+        bestEl.textContent = best;
+        setNewMergedTiles(null, emptyBoard(), board);
+        render();
+        return true;
+    } catch {
+        return false;
+    }
+}
+
 function init() {
     loadBest();
-    restartGame();
+    loadTheme();
+    if (!loadGameState()) {
+        restartGame();
+    }
 }
 init();
