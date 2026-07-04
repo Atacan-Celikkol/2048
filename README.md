@@ -1,8 +1,9 @@
 # 2048
 
-A visually stunning, animated, lightweight version of the classic 2048 game, crafted by **Atacan Çelikkol**.
+A visually stunning, animated, lightweight browser version of the classic 2048 game.
 
-**No Ads & No Telemetry:** Enjoy uninterrupted gameplay on all devices.
+## No Ads & No Telemetry
+Enjoy uninterrupted gameplay for free on all devices.
 
 
 ## PLAY
@@ -32,13 +33,8 @@ No dependencies required.
 
 ## Credits
 
-- Game by **Atacan Çelikkol**
 - Font: [Orbitron](https://fonts.google.com/specimen/Orbitron) by The League of Moveable Type
 
 ## License
 
 MIT License
-
----
-
-Enjoy the game and aim for legendary scores! 🚀
